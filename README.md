@@ -10,6 +10,10 @@ ssh -i aws-yans.pem ubuntu@[AWSのホスト名]
 - devファイル: `dev.txt`
 - testファイル: `test.txt`
 
+ローカルに入れたい場合は
+```
+$ wget http://sato-motoki.com/research/yans/data_yans_train_dev.tar.gz
+```
 
 ## 評価
 - testデータのダウンロード (2日目の夜 or 3日目の朝に配布します)
