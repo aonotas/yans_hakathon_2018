@@ -18,6 +18,11 @@ ssh -i aws-yans.pem ubuntu@[AWSのホスト名]
 ```
 $ wget http://sato-motoki.com/research/yans/data_yans_train_dev.tar.gz
 ```
+## word2vec
+```
+$ data_yans/word2vec
+```
+の中にword2vec/gloveが入っています
 
 ## 評価
 - testデータのダウンロード (2日目の夜 or 3日目の朝に配布します)
