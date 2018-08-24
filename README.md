@@ -5,8 +5,12 @@
 インスタンスは運営側で用意し、それにパスワードでアクセスすることができます。
 各チーム代表者に、ホスト名及びパスワードをお伝えしますので、他のメンバーなど、適宜ユーザを追加してください。
 ```sh
-ssh -i aws-yans.pem ubuntu@[AWSのホスト名]
+$ ssh ubuntu@[AWSのホスト名]
+$ cd ~/hackathon
+の中に訓練データなど入っています.
 ```
+パスワードはSlackで連絡します. 
+
 
 ## 1. 論文分類タスク コース
 - `1`: Accept, `0`: Reject
@@ -20,7 +24,7 @@ $ wget http://sato-motoki.com/research/yans/data_yans_train_dev.tar.gz
 ```
 ## word2vec
 ```
-$ data_yans/word2vec
+$ ~/hackathon/data_yans/word2vec
 ```
 の中にword2vec/gloveが入っています
 
@@ -37,7 +41,7 @@ $ ./download_test_data.sh
 
 ベースラインの動かし方 (20 - 40分くらいかかります.)
 ```
-$ cd ~/code/accept_classify
+$ cd ~/hackathon/code/accept_classify
 $ source ~/.bashrc_baseline
 $ pyenv shell 2.7.11
 $ nohup ./run_featurize_classify_arxiv_yans.sh cl-lg > result_classify_arxiv_cl-lg_yans_test &
