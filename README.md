@@ -25,6 +25,8 @@ $ ./download_test_data.sh
 ベースラインの動かし方 (20 - 40分くらいかかります.)
 ```
 $ cd ~/code/accept_classify
+$ source ~/.bashrc_baseline
+$ pyenv shell 2.7.11
 $ nohup ./run_featurize_classify_arxiv_yans.sh cl-lg > result_classify_arxiv_cl-lg_yans_test &
 $ tail -f result_classify_arxiv_cl-lg_yans_test
 ```
