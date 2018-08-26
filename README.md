@@ -18,10 +18,12 @@ $ cd ~/hackathon
 - devファイル: `dev.txt`
 - testファイル: `test.txt`
 
-ローカルに入れたい場合は
+ローカルに入れたい場合は (200MBあるのでポケットWifi使う場合はHDDからコピーしてください)
 ```
 $ wget http://sato-motoki.com/research/yans/data_yans_train_dev.tar.gz
 ```
+もしくは, @Motoki Satoまで聞いてください. HDDがあります.
+
 ## word2vec
 ```
 $ ~/hackathon/data_yans/word2vec
@@ -36,10 +38,18 @@ $ ./download_test_data.sh
 ※配布前はスクリプトが正しく動かないようになっています. 
 - test.txtの最後のカラムに `\t` 0 or 1を追加して提出してください.
 
-（TODO: 書く）
+
+## ベースライン　の性能
+```
+# arxiv cs + lg (train/dev/test)
+Train majority: 66.873, Dev majority: 67.93 Test majorit: 69.723
+Train accuracy: 76.64 in 1818 examples
+Dev accuracy: 71.14 in 220 examples
+Test accuracy: 71.91 in 208 examples
+```
 
 
-ベースラインの動かし方 (20 - 40分くらいかかります.)
+- ベースラインの動かし方 (60分くらいかかります.)
 ```
 $ cd ~/hackathon/code/accept_classify
 $ source ~/.bashrc_baseline
@@ -49,9 +59,16 @@ $ tail -f result_classify_arxiv_cl-lg_yans_test
 ```
 
 ## 2. 論文分析コース
-
-（TODO: 書く）
+まず, 分類器を作ってから、分類器の分析とかでもOK
+もしくは, 論文に関する分析. 
 
 ## 3. 自由コース
+- 論文執筆時にあるとちょっと嬉しいツール
+- 日々の実験管理を便利にするツール
+- 形態素解析用辞書の整備
+- SoTAのSequence Labelingの整備 (deep-crf)
+- Word2color ：“ピカチュー”→ 黄色　の変換ツール
+- アイドルの握手会コーパスの分析
+- NIPSなどの会議の著者が日本人だけのものを抽出するツール
+- なんでもOK！ネタツールでもOK. 
 
-（TODO: 書く）
