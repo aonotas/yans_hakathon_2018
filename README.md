@@ -5,12 +5,18 @@
 インスタンスは運営側で用意し、それにパスワードでアクセスすることができます。
 各チーム代表者に、ホスト名及びパスワードをお伝えしますので、他のメンバーなど、適宜ユーザを追加してください。
 ```sh
-$ ssh ubuntu@[AWSのホスト名]
+$ ssh [チームユーザー名]@[AWSのホスト名]
 $ cd ~/hackathon
 の中に訓練データなど入っています.
 ```
-パスワードはSlackで連絡します. 
+`チームユーザー名` は `yans_1`. パスワードはSlackで連絡します. 
 
+
+## データのコピー
+```
+$ ./copy_hackathon.sh
+```
+AWSにログインしたらデータを ホームディレクトリにコピーしてください.
 
 ## 1. 論文分類タスク コース
 - `1`: Accept, `0`: Reject
@@ -51,6 +57,7 @@ Test accuracy: 71.91 in 208 examples
 
 - ベースラインの動かし方 (60分くらいかかります.)
 ```
+$ ./copy_hackathon.sh # これを事前に行っておいてください
 $ cd ~/hackathon/code/accept_classify
 $ source ~/.bashrc_baseline
 $ pyenv shell 2.7.11
