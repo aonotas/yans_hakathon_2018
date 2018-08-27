@@ -58,6 +58,7 @@ $ ./copy_hackathon.sh # これを事前に行っておいてください
 $ cd ~/hackathon/code/accept_classify
 $ source ~/.bashrc_baseline
 $ pyenv shell 2.7.11
+$ echo -e "import nltk\nnltk.download('punkt')\nnltk.download('stopwords')" | python
 $ nohup ./run_featurize_classify_arxiv_yans.sh cl-lg > result_classify_arxiv_cl-lg_yans_test &
 $ tail -f result_classify_arxiv_cl-lg_yans_test
 ```
