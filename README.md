@@ -5,18 +5,34 @@
 インスタンスは運営側で用意し、それにパスワードでアクセスすることができます。
 各チーム代表者に、ホスト名及びパスワードをお伝えしますので、他のメンバーなど、適宜ユーザを追加してください。
 ```sh
-$ ssh [チームユーザー名]@[AWSのホスト名]
-$ cd ~/hackathon
-の中に訓練データなど入っています.
+$ ssh yans@[AWSのホスト名]
 ```
-`チームユーザー名` は `yans_1`. パスワードはSlackで連絡します. 
 
+一つのインスタンスは8GPUが使えます。これを4チームで共有してください (1チーム2GPUまで)。
+`yans` ユーザはログイン用の共通のユーザです。まず、各チーム毎、もしくはチームの各メンバ用に、新しいユーザを作成してください。
+
+``` sh
+$ sudo adduser <user-name>
+パスワードを入力
+$ sudo gpasswd -a <user-name> sudo
+```
+
+sudo のパスワードはログイン時に使用したものです。2番目のコマンドはユーザが sudo するために必要です。
+ユーザを作れば、そのユーザに ssh ログインすることや、そのユーザになることができます。
+
+``` sh
+$ sudo su - <user-name> # ユーザを変更
+または、ローカルから
+$ ssh <user-name>@[AWSのホスト名]
+```
 
 ## データのコピー
+ユーザ毎に必要であれば、以下のコマンドでデータをホームディレクトリにコピーしてください。
 ```
-$ ./copy_hackathon.sh
+$ ./copy_hackathon.sh # ベースラインやデータなどをユーザディレクトリにコピー
+$ cd ~/hackathon
+の中に訓練データなど入っています。
 ```
-AWSにログインしたらデータを ホームディレクトリにコピーしてください.
 
 ## 1. 論文分類タスク コース
 - `1`: Accept, `0`: Reject
@@ -63,6 +79,21 @@ $ source ~/.bashrc_baseline
 $ pyenv shell 2.7.11
 $ nohup ./run_featurize_classify_arxiv_yans.sh cl-lg > result_classify_arxiv_cl-lg_yans_test &
 $ tail -f result_classify_arxiv_cl-lg_yans_test
+```
+
+### anaconda で GPU の利用
+```
+$ source ../ubuntu/anaconda3/bin/activate chainer_p36 # Python3 環境で Chainer 利用
+$ source ../ubuntu/anaconda3/bin/activate pytorch_p36 # Python3 環境で PyTorch 利用
+```
+などで、いろいろな深層学習用のフレームワークを切り替えることができます。
+例えば一つ目のコマンドを実行すると Chainer がインストールされた python 環境に切り替えられます。
+```
+(chainer_p36) yans@ip-172-31-45-56:~$ python
+Python 3.6.6 |Anaconda, Inc.| (default, Jun 28 2018, 17:14:51)
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import chainer
 ```
 
 ## 2. 論文分析コース
