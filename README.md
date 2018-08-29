@@ -78,6 +78,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import chainer
 ```
 
+## テストデータ
+```
+$ wget http://sato-motoki.com/research/yans/test.txt
+```
+テストデータはこちらです（ハッカソン後、追記）
 
 ## 評価コード（ハッカソン後、追加）
 
