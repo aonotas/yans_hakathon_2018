@@ -78,6 +78,32 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import chainer
 ```
 
+
+## 評価コード（ハッカソン後、追加）
+
+```
+$ wget http://sato-motoki.com/research/yans/test_gold.txt
+$ python eval.py [result_predict.txt]
+```
+csvで提出したチームが居たので共通スクリプトのため , -> \t　置き換えなどしています. 
+
+各チームの提出ファイル（2チーム分）
+```
+$ wget http://sato-motoki.com/research/yans/predict_team_ttk.txt
+$ wget http://sato-motoki.com/research/yans/predict_team_coi.txt
+```
+Team TTKが優勝チームです
+
+Model                                                                      | Accuracy 
+-------------------------------------------------------------------------- | :---: 
+Majority                                                                   | 69.72 
+SVM (Baseline)                                                             | 71.91
+Team COI                                                                   | 63.60
+Team TTK                                                                   | 74.38
+Your Score will be...?                                                     | ?????
+
+
+
 ## 2. 論文分析コース
 まず, 分類器を作ってから、分類器の分析とかでもOK
 もしくは, 論文に関する分析. 
